@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  // basePath: process.env.BASE_PATH,
-  // env: {
-  //   NEXTAUTH_URL: process.env.NEXTAUTH_URL || 'https://pipedrive-v1.onrender.com/home/api/auth',
-  //   BASE_PATH:  process.env.BASE_PATH || '/home',
-  // }
+    basePath: process.env.BASE_PATH,
+    assetPrefix: process.env.ASSET_PREFIX,
+    env: {
+        NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+        BASE_PATH:  process.env.BASE_PATH,
+        ASSET_PREFIX: process.env.ASSET_PREFIX,
+    }
 }
 
 module.exports = nextConfig
