@@ -8,8 +8,15 @@ const Test = () =>{
     //const sdk = useSdk();
     const router = useRouter();
     const sessions = useSession();
+
     return(
-     <div>{router.query}</div>
+     <div>
+         router:
+         {   Object.entries(router.query)
+             .map( ([key,value]) => `${key}: ${value}`)
+             .map(item => <div>{item}</div>)
+         }
+     </div>
     )
 }
 
@@ -17,7 +24,7 @@ const Test = () =>{
 export const Example = () =>{
     const router = useRouter();
     return(
-        <SdkContextProvider id={router.query.id || 1}>
+        <SdkContextProvider id={router.query.id}>
             <Test/>
         </SdkContextProvider>
     )
