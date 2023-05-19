@@ -16,6 +16,12 @@ const Test = () =>{
              .map( ([key,value]) => `${key}: ${value}`)
              .map(item => <div>{item}</div>)
          }
+
+         sessions:
+         {   Object.entries(sessions.data || {})
+             .map( ([key,value]) => `${key}: ${value}`)
+             .map(item => <div>{item}</div>)
+         }
      </div>
     )
 }
