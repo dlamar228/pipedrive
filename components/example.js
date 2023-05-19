@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
-import useSdk from "@/components/useSdk";
-import {SdkContextProvider} from "@/components/sdk";
+import useSdk from "./useSdk";
+import {SdkContextProvider} from "./sdk";
 
 
 const Test = () =>{
