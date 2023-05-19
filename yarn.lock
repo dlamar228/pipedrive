@@ -146,6 +146,11 @@
   resolved "https://registry.yarnpkg.com/@panva/hkdf/-/hkdf-1.1.1.tgz#ab9cd8755d1976e72fc77a00f7655a64efe6cd5d"
   integrity sha512-dhPeilub1NuIG0X5Kvhh9lH4iW3ZsHlnzwgwbOlgwQ2wG1IqFzsgHqmKPk3WzsdWAeaxKJxgM0+W433RmN45GA==
 
+"@pipedrive/app-extensions-sdk@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@pipedrive/app-extensions-sdk/-/app-extensions-sdk-0.8.0.tgz#ca4d67275e4d6e8585b2f20688c58e4bcf370f14"
+  integrity sha512-IdR718jeh//rtWXKIKpIAe01hGKxQPgIJIaYSuoscTXMUF2ZNX28QfG81R2jCSWG42Nw7GOJd9Qpv+VZtedyxQ==
+
 "@types/node@*":
   version "20.2.1"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.2.1.tgz#de559d4b33be9a808fd43372ccee822c70f39704"
