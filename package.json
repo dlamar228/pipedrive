@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@pipedrive/app-extensions-sdk": "^0.8.0",
+    "pipedrive": "^19.1.0",
     "next": "11.1.4",
     "next-auth": "4.22.1",
     "react": "18.2.0",
