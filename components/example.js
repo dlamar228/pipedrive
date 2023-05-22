@@ -83,6 +83,7 @@ const Test = () =>{
                  }
              ).then(res => res.json());
              console.log(result)
+             console.log(document.domain)
              setResponse(result)
              // const res = await client.addDeal(data);
              // console.log(res)
