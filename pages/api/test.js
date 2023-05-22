@@ -3,6 +3,9 @@
 import { getSession} from "next-auth/react"
 
 export default async function handler(req, res) {
+    console.log(
+        req.body
+    )
     res.send({error: "PIZDA"})
     // if (session) {
     //   const {accessToken, apiDomain } = session;

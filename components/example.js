@@ -41,7 +41,7 @@ const Test = () =>{
     //     add_time: '2023-05-20',
     // }
     //
-
+    //JSON.stringify(router.query)
     return(
      <div>
          <div>
@@ -76,7 +76,12 @@ const Test = () =>{
 
          <button onClick={async ()=>{
              let url = process.env.DOMAIN+process.env.BASE_PATH+"/api/test"
-             let result = await fetch(url,{method: 'GET',}).then(res => res.json());
+             let result = await fetch(url,
+                 {
+                     method: 'POST',
+                     body: JSON.stringify(router.query),
+                 }
+             ).then(res => res.json());
              console.log(result)
              setResponse(result)
              // const res = await client.addDeal(data);
