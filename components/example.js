@@ -47,27 +47,30 @@ const Test = () =>{
          <div>
              Router:
              {
-                 Object.entries(router.query)
-                 .map( ([key,value]) => `${key}: ${value}`)
-                 .map(item => <div>{item}</div>)
+                 JSON.stringify(router.query)
+                 // Object.entries(router.query)
+                 // .map( ([key,value]) => `${key}: ${value}`)
+                 // .map(item => <div>{item}</div>)
              }
          </div>
 
         <div>
             Sessions:
             {
-                Object.entries(sessions.data || {})
-                .map( ([key,value]) => `${key}: ${value}`)
-                .map(item => <div>{item}</div>)
+                JSON.stringify(sessions.data)
+                // Object.entries(sessions.data || {})
+                // .map( ([key,value]) => `${key}: ${value}`)
+                // .map(item => <div>{item}</div>)
             }
         </div>
 
          <div>
              Response:
              {
-                 Object.entries(response || {})
-                 .map( ([key,value]) => `${key}: ${value}`)
-                 .map(item => <div>{item}</div>)
+                  JSON.stringify(response)
+                 // Object.entries(response || {})
+                 // .map( ([key,value]) => `${key}: ${value}`)
+                 // .map(item => <div>{item}</div>)
              }
          </div>
 
