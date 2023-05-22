@@ -45,7 +45,7 @@ const Test = () =>{
     return(
      <div>
          <div>
-             router:
+             Router:
              {
                  Object.entries(router.query)
                  .map( ([key,value]) => `${key}: ${value}`)
@@ -54,7 +54,7 @@ const Test = () =>{
          </div>
 
         <div>
-            sessions:
+            Sessions:
             {
                 Object.entries(sessions.data || {})
                 .map( ([key,value]) => `${key}: ${value}`)
@@ -63,15 +63,19 @@ const Test = () =>{
         </div>
 
          <div>
-             response:
+             Response:
              {
-                 JSON.stringify(router.query)
+                 Object.entries(response || {})
+                 .map( ([key,value]) => `${key}: ${value}`)
+                 .map(item => <div>{item}</div>)
              }
          </div>
 
          <button onClick={async ()=>{
-             let result = await fetch(process.env.DOMAIN+"/api/test").then(value => value)
+             let url = process.env.DOMAIN+process.env.BASE_PATH+"/api/test"
+             let result = await fetch(url,{method: 'GET',}).then(res => res.json());
              console.log(result)
+             setResponse(result)
              // const res = await client.addDeal(data);
              // console.log(res)
              // setResponse(res);
