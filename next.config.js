@@ -7,6 +7,7 @@ const nextConfig = {
         NEXTAUTH_URL: process.env.NEXTAUTH_URL,
         BASE_PATH:  process.env.BASE_PATH,
         ASSET_PREFIX: process.env.ASSET_PREFIX,
+        DOMAIN: process.env.DOMAIN,
     }
 }
 

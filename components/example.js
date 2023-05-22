@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import useSdk from "./useSdk";
 import {SdkContextProvider} from "./sdk";
 import {signIn, signOut, useSession} from "next-auth/react";
+import {getToken} from "next-auth/jwt";
 import {ApiClient, DealsApi} from "pipedrive";
 import {useState} from "react";
 
@@ -17,6 +18,7 @@ const Test = () =>{
     const router = useRouter();
     const sessions = useSession();
     const [response, setResponse] = useState();
+
 
     //const defaultClient = new ApiClient();
     //defaultClient.authentications.api_key.apiKey = '8eb02561abd335a572b7f341c01aa1a306ee4c1e';
@@ -63,37 +65,20 @@ const Test = () =>{
          <div>
              response:
              {
-                'NONE'
+                 JSON.stringify(router.query)
              }
          </div>
 
-         {/*<button onClick={async ()=>{*/}
-         {/*    const res = await client.addDeal(data);*/}
-         {/*    console.log(res)*/}
-         {/*    setResponse(res);*/}
+         <button onClick={async ()=>{
+             let result = await fetch(process.env.DOMAIN+"/api/test").then(value => value)
+             console.log(result)
+             // const res = await client.addDeal(data);
+             // console.log(res)
+             // setResponse(res);
 
-         {/*}}>Press me</button>*/}
+         }}>Press me</button>
      </div>
 
-    )
-}
-
-const Signup = () =>{
-    const { data: session } = useSession()
-    if (session) {
-        return (
-            <>
-                Signed in as {session.user?.email} <br />
-                <button onClick={() => signOut()}>Sign out</button>
-            </>
-        )
-    }
-
-    return (
-        <>
-            Not signed in <br />
-            <button onClick={() => signIn()}>Sign in</button>
-        </>
     )
 }
 
@@ -102,7 +87,6 @@ export const Example = () =>{
     return(
         <SdkContextProvider id={router.query.id}>
             <Test/>
-            <Signup/>
         </SdkContextProvider>
     )
 }
